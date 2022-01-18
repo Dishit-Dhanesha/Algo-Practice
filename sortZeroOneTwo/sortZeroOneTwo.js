@@ -20,3 +20,31 @@ function sortZeroOneTwo(arr) {
 }
 
 sortZeroOneTwo([0, 0, 0, 2, 1, 0, 2, 2, 2]);
+
+//Dutch National Flag Algorithm or One Pass Method
+
+function sortZeroOneTwo(a) {
+  let lo = 0;
+  let hi = a.length - 1;
+  let mid = 0;
+  let temp = 0;
+  while (mid <= hi) {
+    if (a[mid] == 0) {
+      temp = a[lo];
+      a[lo] = a[mid];
+      a[mid] = temp;
+      lo++;
+      mid++;
+    } else if (a[mid] == 1) {
+      mid++;
+    } else {
+      temp = a[mid];
+      a[mid] = a[hi];
+      a[hi] = temp;
+      hi--;
+    }
+  }
+  console.log(a);
+}
+
+sortZeroOneTwo([0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1]);
