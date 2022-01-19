@@ -1,2 +1,2 @@
-# Algo-Practice
-Algo Practice in Javascript and Python
+# Question
+Union of two arrays
