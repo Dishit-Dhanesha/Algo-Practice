@@ -1,14 +1,19 @@
 function MergeIntervals(intervals) {
-    if(!intervals.length) return [];
-    intervals.sort((a, b) => a[0] - b[0]);
-    const result = [intervals[0]];
-    for(let [start, end] of intervals) {
-        if(start <= result[result.length - 1][1]) {
-            const [startPrev, endPrev] = result.pop();
-            result.push([startPrev, Math.max(end, endPrev)]);
-        } else result.push([start, end]);
-    }
-    console.log(result) ;
+  if (!intervals.length) return [];
+  intervals.sort((a, b) => a[0] - b[0]);
+  const result = [intervals[0]];
+  for (let [start, end] of intervals) {
+    if (start <= result[result.length - 1][1]) {
+      const [startPrev, endPrev] = result.pop();
+      result.push([startPrev, Math.max(end, endPrev)]);
+    } else result.push([start, end]);
   }
+  console.log(result);
+}
 
-  MergeIntervals([[1,3],[2,6],[25,10],[18,15]])
+MergeIntervals([
+  [1, 3],
+  [2, 6],
+  [25, 10],
+  [18, 15],
+]);
