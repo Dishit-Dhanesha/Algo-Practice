@@ -15,7 +15,7 @@ function SubArray0(arr, sum) {
   }
 }
 
-subarraySumBF([4, 2, -3, 1, 6], 0);
+SubArray0([4, 2, -3, 1, 6], 0);
 
 // Using Hash Map
 
@@ -24,9 +24,7 @@ var subarraySumHashMap = function (arr, k) {
   let sum = 0;
   let count = 0;
   map.set(0, 1);
-  console.log(map);
   for (let i = 0; i < arr.length; i++) {
-    console.log(map);
     sum += arr[i];
     if (map.has(sum - k)) count += map.get(sum - k);
     if (map.has(sum)) map.set(sum, map.get(sum) + 1);
